@@ -1,0 +1,1 @@
+var msApp = angular.module('msApp', ['ngRoute']); // Initialize the AngularJS system

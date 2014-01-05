@@ -1,0 +1,12 @@
+<div id="game">
+	<h1 ng-show="lost" id="lost"> You Lost!</h1>
+	<h1 ng-show="won" id="won"> You Won!!</h1>
+	<ul ng-repeat="(row, values) in grid track by $index">
+		<li ng-repeat="(col, val) in values track by $index">
+			<div ng-click ="renderMines(row, col)" >
+				<span ng-show ="grid[row][col].adjNum">{{ grid[row][col].adjNum }}</span>
+				<!-- {{ row }},{{ col }} -->
+			</div>
+		</li>
+	</ul>
+</div>
