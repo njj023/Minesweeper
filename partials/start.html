@@ -1,14 +1,16 @@
 <div id="start">
-	<h2>Please Set Board Dimensions: </h2>
+	<h1>Please Set Board Dimensions: </h1>
 	<input type='text' ng-model="rows" placeholder='Rows'>
 	<input type='text' ng-model="cols" placeholder='Columns'>
 	<input type='text' ng-model="numMines" placeholder='Number of Mines'>
 	<a ng-click="setGame(rows, cols, numMines);" href="#/game">Go</a>
 	<div> 
-		OR
-		<span ng-click="setGame(3, 3, 4);" href="#/game">Easy</span>
-		<span ng-click="setGame(6, 6, 10);" href="#/game">Medium</span>
-		<span ng-click="setGame(7, 7, 7);" href="#/game">Hard</span>
+		<span>OR</span>
+		<br>
+		<div>
+			<button ng-click="setGame(4, 4, 1);" href="#/game">Easy</button>
+			<button ng-click="setGame(6, 6, 10);" href="#/game">Medium</button>
+			<button ng-click="setGame(7, 7, 7);" href="#/game">Hard</button>
+		</div>
 	</div>
-	
-</div>
+</div>¡

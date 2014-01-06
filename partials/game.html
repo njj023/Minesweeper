@@ -1,12 +1,19 @@
 <div id="game">
-	<h1 ng-show="lost" id="lost"> You Lost!</h1>
+	<h1 ng-show="lost" id="lost"> 
+		You Lost! <a ng-click></a>
+	</h1>
 	<h1 ng-show="won" id="won"> You Won!!</h1>
-	<ul ng-repeat="(row, values) in grid track by $index">
-		<li ng-repeat="(col, val) in values track by $index">
-			<div ng-click ="renderMines(row, col)" >
-				<span ng-show ="grid[row][col].adjNum">{{ grid[row][col].adjNum }}</span>
-				<!-- {{ row }},{{ col }} -->
-			</div>
-		</li>
-	</ul>
+	<h2 ng-show="won || lost" id="restart">
+		<a ng-click="startGame()" href="">Restart</a>
+		<a ng-click="startGame()" href="#/start">Start Another</a>
+	</h2>
+	<div ng-repeat="(row, values) in grid track by $index">
+		<div id="box" ng-repeat="(col, val) in values track by $index" ng-click ="checkForMines(row, col)" >	
+				<span ng-show ="grid[row][col].adjNum >= 0 && !showMines">{{ grid[row][col].adjNum }}</span>
+				<span ng-show ="grid[row][col].containsMine && showMines">X</span>
+				<span id="flag" ng-right-click="changeState(row, col)" ng-show ="grid[row][col].userState">
+					{{ grid[row][col].userState }}
+				</span>
+		</div>
+	</div>
 </div>
